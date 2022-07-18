@@ -15,7 +15,7 @@ public class BaseStaticDriver {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
         driver = new ChromeDriver();
-        //driver.manage().window().maximize(); // max
+        driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //
 
         Duration dr= Duration.ofSeconds(30);
