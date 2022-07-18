@@ -9,8 +9,8 @@ public class _08_SendText extends BaseStaticDriver {
     public static void main(String[] args) {
         driver.get("https://demo.seleniumeasy.com/basic-first-form-demo.html");
 
-        WebElement element=driver.findElement(By.partialLinkText("thanks"));
-        element.click();
+//        WebElement element=driver.findElement(By.partialLinkText("thanks"));
+//        element.click();
 
         WebElement txtBox=driver.findElement(By.id("user-message"));
         txtBox.sendKeys("merhaba selenium");
