@@ -22,7 +22,7 @@ public class _02_Ornek extends BaseStaticDriver {
 
 
 
-        WebElement btn=driver.findElement(By.cssSelector("[class^='mt-2 justify'] button"));
+        WebElement btn=driver.findElement(By.cssSelector("[class^='mt-2 justify'] button[class^=btn]"));
         btn.click();
 
         WebElement msg=driver.findElement(By.cssSelector("input[placeholder='Full Name']"));
