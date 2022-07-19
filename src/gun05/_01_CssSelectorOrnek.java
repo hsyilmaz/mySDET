@@ -25,10 +25,10 @@ public class _01_CssSelectorOrnek extends BaseStaticDriver {
         WebElement dropDownDiscover=driver.findElement(By.cssSelector("[id$='_4588']"));
         dropDownDiscover.click();
         Bekle(2);
-        WebElement optionOnlineAdvertising=driver.findElement(By.cssSelector("[id$=_4588] > [value='Online Advertising']"));
+        WebElement optionOnlineAdvertising=driver.findElement(By.cssSelector("[id*='_4588']>[value='Online Advertising']"));
         optionOnlineAdvertising.click();
         Bekle(2);
-        WebElement buttonEveryDay=driver.findElement(By.cssSelector("[id='u_eva_89585_0'][value='Every Day']"));
+        WebElement buttonEveryDay=driver.findElement(By.cssSelector("[id$='_89585_0'][value='Every Day']"));
         buttonEveryDay.click();
         Bekle(2);
         WebElement goodRadio=driver.findElement(By.cssSelector("[type='radio'][value='Good']"));
