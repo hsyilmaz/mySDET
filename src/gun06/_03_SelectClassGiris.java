@@ -15,13 +15,15 @@ import org.openqa.selenium.support.ui.Select;
 
 public class _03_SelectClassGiris extends BaseStaticDriver {
     public static void main(String[] args) {
-        driver.get("https://www.amazon.com/");
+
+    driver.get("https://www.amazon.com/");
     WebElement menu= driver.findElement(By.id("searchDropdownBox"));
     Select ddmenu=new Select(menu);
 
     ddmenu.selectByVisibleText("Books");
 
     WebElement srcbutton= driver.findElement(By.id("nav-search-submit-button"));
+    srcbutton.click();
 
         String url=driver.getCurrentUrl();
         Assert.assertTrue(url.contains("amazon"));
