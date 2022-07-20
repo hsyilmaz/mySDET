@@ -9,7 +9,7 @@ import org.junit.Assert;
 
 public class _02_XpathSenaryo extends BaseStaticDriver {
     public static void main(String[] args) {
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://www.saucedemo.com");
         Bekle(3);
         WebElement usernameInput=driver.findElement(By.xpath("//input[@id='user-name']"));
         usernameInput.sendKeys("standard_user");
@@ -68,14 +68,16 @@ public class _02_XpathSenaryo extends BaseStaticDriver {
         double toplam=0;
         for(WebElement e: ucretler) {
             System.out.println("e.getText() = " + e.getText());
-            toplam += Double.parseDouble(e.getText().substring(1));
+           //toplam += Double.parseDouble(e.getText().substring(1));
+            toplam +=Double.parseDouble(e.getText().replaceAll("\\D",""));
         }
         System.out.println("toplam = " + toplam);
 
         // double çevirme işlemleri ayrı bir metod yardımıyla regex ile yapılacak
         WebElement webAltToplam=driver.findElement(By.xpath("//*[@class='summary_subtotal_label']"));
         System.out.println(webAltToplam.getText());
-        double altToplam = Double.parseDouble(webAltToplam.getText().substring(13));
+        //double altToplam = Double.parseDouble(webAltToplam.getText().substring(13));
+        double altToplam = Double.parseDouble(webAltToplam.getText().replaceAll("\\D",""));
         System.out.println("altToplam = " + altToplam);
 
         if (toplam == altToplam)
