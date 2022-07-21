@@ -18,7 +18,7 @@ public class BaseStaticDriver {
         driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //
 
-        Duration dr= Duration.ofSeconds(30);
+        Duration dr= Duration.ofSeconds(3);
         driver.manage().timeouts().pageLoadTimeout(dr); // sadece ana sayfa yüklenirken en başta
         driver.manage().timeouts().implicitlyWait(dr); // bütün webElement için geçerli
     }
