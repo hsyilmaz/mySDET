@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.Collections;
 import java.util.List;
 
 public class _10 extends BaseStaticDriver {
@@ -15,6 +16,7 @@ public class _10 extends BaseStaticDriver {
         List<WebElement> countries=driver.findElements(By.cssSelector("[id^='box10']"));
         for(WebElement ctry: countries)
             System.out.println(ctry.getText());
+        countries.getClass();
 
         List<WebElement>capitals=driver.findElements(By.cssSelector("[id^='box'][dragableelement]"));
         for (WebElement city:capitals)
