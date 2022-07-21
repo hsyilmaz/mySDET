@@ -20,11 +20,13 @@ public class _10 extends BaseStaticDriver {
         for (WebElement city:capitals)
             System.out.println(city.getText());
 
-        Actions aksyiyonlar=new Actions(driver);
-        for(int i=0; i<7;i++){
-        Action aksiyon=aksyiyonlar.dragAndDrop(countries.get(i),capitals.get(i)).build();
-        aksiyon.perform();}
+        Actions aksiyonlar=new Actions(driver);
+         for(int i=0; i<7;i++){
+         Action aksiyon=aksiyonlar.dragAndDrop(countries.get(i),capitals.get(i)).build();
+         aksiyon.perform();}
 
         BekleKapat();
+
+
     }
 }
