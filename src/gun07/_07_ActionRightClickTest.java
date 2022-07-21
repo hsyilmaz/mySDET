@@ -13,9 +13,9 @@ public class _07_ActionRightClickTest extends BaseStaticDriver {
 
         WebElement element =driver.findElement(By.id("rightClickBtn"));
 
-        Actions aksiyonlar=new Actions(driver);
-        Action aksyion=aksiyonlar.moveToElement(element).contextClick().build();
-        aksyion.perform();
+        Actions actions = new Actions(driver);
+        Action action=actions.moveToElement(element).click().build();
+        action.perform();
 
         Bekle(6);
         BekleKapat();

@@ -16,7 +16,7 @@ public class _09_DragAndDropBy extends BaseStaticDriver {
         Action aksiyon=aksiyonlar.dragAndDropBy(solSurgu, 100, 0).build();
         aksiyon.perform();
 
-        Bekle(2);
+        Bekle(3);
         BekleKapat();
     }
 }
