@@ -4,7 +4,7 @@
           WebElemnt lerde kullanılır.
 
           Action class ıyla neler yaparsınız ?
-          Hoverover, double click, right click, drag and drop, Özel tuşlara basma (Shift,ctrl)
+          Hover over, double click, right click, drag and drop, Özel tuşlara basma (Shift,ctrl)
 
       Hover Over ı selenium da nasıl yaparsınız ?
           Action class ıyla yaparım moveToElement metodunu kullanırım.

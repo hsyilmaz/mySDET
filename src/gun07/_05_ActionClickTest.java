@@ -24,5 +24,7 @@ public class _05_ActionClickTest extends BaseStaticDriver {
 
         // aksiyonlar.moveToElement(element).click().build().perform();  kısa hali
         BekleKapat();
+
+
     }
 }

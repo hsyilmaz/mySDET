@@ -10,8 +10,8 @@ public class _03_isDisplayed extends BaseStaticDriver {
         driver.get("https://www.facebook.com/");
 
         Bekle(2);
-        WebElement cookiesAccept=driver.findElement(By.xpath("//*[text()='Allow essential and optional cookies']"));
-        cookiesAccept.click();
+//        WebElement cookiesAccept=driver.findElement(By.xpath("//*[text()='Allow essential and optional cookies']"));
+//        cookiesAccept.click();
 
         Bekle(2);
         WebElement btnYeniHesap=driver.findElement(By.cssSelector("[id^='u_0_0_']"));

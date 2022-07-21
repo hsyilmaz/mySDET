@@ -16,8 +16,11 @@ public class _02_ElamaninStatusu extends BaseStaticDriver {
         Bekle(2);
 
         sali.click();
-        System.out.println(sali.isSelected());
+
+
 
         BekleKapat();
+
+        driver.get("http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCheckBox");
     }
 }
