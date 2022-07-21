@@ -10,7 +10,7 @@ import java.util.List;
 
 public class _03_ActionHoverOverTest extends BaseStaticDriver {
     public static void main(String[] args) {
-       driver.get("https://www.etsy.com/");
+       driver.get("https://www.etsy.com");
 
        List<WebElement> cookiesAccept=driver.findElements(By.cssSelector("[data-gdpr-single-choice-accept='true']"));
        if (cookiesAccept.size() > 0)
