@@ -14,8 +14,8 @@ public class _08_ActionDragAndDropTest extends BaseStaticDriver {
         WebElement norvec=driver.findElement(By.id("box101"));
 
         //1.Yöntem
-        Actions aksyiyonlar=new Actions(driver);
-        Action aksiyon=aksyiyonlar.dragAndDrop(oslo,norvec).build();
+        Actions aksiyonlar=new Actions(driver);
+        Action aksiyon=aksiyonlar.dragAndDrop(oslo,norvec).build();
         aksiyon.perform();
 
         //aksyiyonlar.dragAndDrop(oslo,norvec).build().perform;
@@ -24,7 +24,7 @@ public class _08_ActionDragAndDropTest extends BaseStaticDriver {
         //2.Yöntem
         WebElement seul=driver.findElement(By.id("box5"));
         WebElement kore=driver.findElement(By.id("box105"));
-        aksiyon=aksyiyonlar.clickAndHold(seul).moveToElement(kore).release().build();
+        aksiyon=aksiyonlar.clickAndHold(seul).moveToElement(kore).release().build();
         aksiyon.perform();
 
 
