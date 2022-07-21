@@ -28,6 +28,7 @@ public class _08_ActionDragAndDropTest extends BaseStaticDriver {
         aksiyon.perform();
 
 
+
         BekleKapat();
     }
 }
