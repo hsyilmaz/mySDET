@@ -13,18 +13,15 @@ public class MatchingQuestion extends BaseStaticDriver {
         driver.get("http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
 
         List<WebElement> countries = driver.findElements(By.cssSelector("[id^='box10']"));
-        for (WebElement ctry : countries)
-            System.out.println(ctry.getText());
 
         List<WebElement> capitals = driver.findElements(By.cssSelector("[id^='box'][dragableelement]"));
-        for (WebElement city : capitals)
-            System.out.println(city.getText());
 
-        Actions aksiyonlar = new Actions(driver);
+        Actions actions = new Actions(driver);
         for (WebElement city : capitals)
-            for (WebElement ctry : countries) {
-                aksiyonlar.dragAndDrop(city, ctry).build().perform();
+            for (WebElement ctry : countries){
+                Action action= actions.dragAndDrop(city, ctry).build();
+                action.perform();}
 
-            }
+
     }
 }
