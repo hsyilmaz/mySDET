@@ -20,12 +20,11 @@ public class MatchingQuestion extends BaseStaticDriver {
         for (WebElement city : capitals)
             System.out.println(city.getText());
 
-
+        Actions aksiyonlar = new Actions(driver);
         for (WebElement city : capitals)
             for (WebElement ctry : countries) {
-                Actions aksiyonlar = new Actions(driver);
-                Action aksiyon = aksiyonlar.dragAndDrop(city, ctry).build();
-                aksiyon.perform();
+                aksiyonlar.dragAndDrop(city, ctry).build().perform();
+
             }
     }
 }
