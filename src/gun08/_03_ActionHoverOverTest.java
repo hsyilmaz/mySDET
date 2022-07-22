@@ -16,7 +16,7 @@ public class _03_ActionHoverOverTest extends BaseStaticDriver {
        if (cookiesAccept.size() > 0)
           cookiesAccept.get(0).click();
 
-        WebElement mucevher=driver.findElement(By.id("desktop-category-nav"));
+        WebElement mucevher=driver.findElement(By.cssSelector("li[class='top-nav-item wt-pb-xs-2 wt-mr-xs-2 wt-display-flex-xs wt-align-items-center']"));
         WebElement kolye=driver.findElement(By.id("side-nav-category-link-10873"));
         WebElement bibkolye=driver.findElement(By.id("catnav-l3-10881"));
 
