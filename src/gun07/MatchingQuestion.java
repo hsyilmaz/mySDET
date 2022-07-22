@@ -20,10 +20,11 @@ public class MatchingQuestion extends BaseStaticDriver {
 
         for (WebElement city : capitals)
             for (WebElement ctry : countries){
-                Action action=actions.clickAndHold(city).moveToElement(ctry).release().build();
-                if (city.getCssValue("style")
+                if (!city.getCssValue("style")
                         .contains("style=visibility: visible; background-color: rgb(0, 255, 0);"))
-                    action.perform();
+                    continue;
+                else {Action action=actions.clickAndHold(city).moveToElement(ctry).release().build();
+                action.perform();}
             }
 
 
