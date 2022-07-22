@@ -17,11 +17,18 @@ public class MatchingQuestion extends BaseStaticDriver {
         List<WebElement> capitals = driver.findElements(By.cssSelector("[id^='box'][dragableelement]"));
 
         Actions actions = new Actions(driver);
+
         for (WebElement city : capitals)
             for (WebElement ctry : countries){
-                Action action= actions.dragAndDrop(city, ctry).build();
-                action.perform();}
+                Action action=actions.clickAndHold(city).moveToElement(ctry).release().build();
+                if (city.getCssValue("style")
+                        .contains("style=visibility: visible; background-color: rgb(0, 255, 0);"))
+                    action.perform();
+            }
 
 
+
+        BekleKapat();
     }
 }
+
