@@ -30,7 +30,7 @@ public class _03_FillingFormTask extends BaseStaticDriver {
         submit.click();
 
         wait.until(ExpectedConditions.textToBe(By.id("submit-control"),
-                "Form submited Successfully!"));
+                "Form submitted Successfully!"));
 
         WebElement mesaj=driver.findElement(By.id("submit-control"));
         Assert.assertEquals("Form submitted Successfully!", mesaj.getText());
