@@ -3,12 +3,11 @@ package gun07;
 import Utils.BaseStaticDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-public class mq2 extends BaseStaticDriver {
+public class matching_run extends BaseStaticDriver {
     public static void main(String[] args) {
         driver.get("http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html");
 
