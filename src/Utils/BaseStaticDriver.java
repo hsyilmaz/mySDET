@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BaseStaticDriver {
+
     public static WebDriver driver;
     public static WebDriverWait wait;
 
@@ -22,7 +23,7 @@ public class BaseStaticDriver {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
         driver = new ChromeDriver();
-        //driver.manage().window().maximize(); // max
+        driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //
 
         wait=new WebDriverWait(driver,Duration.ofSeconds(30));
