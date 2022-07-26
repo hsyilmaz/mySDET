@@ -20,10 +20,16 @@ public class Matching_noRun extends BaseStaticDriver {
 
         for (WebElement city : capitals)
             for (WebElement ctry : countries){
-                Action action= actions.clickAndHold(city).moveToElement(ctry).release(ctry).build();
-                if (city.getCssValue("style").contains("background-color"))
-                break;
-                else action.perform();
+                Action action= actions.clickAndHold(city).build();
+                action.perform();
+
+                Bekle(1);
+
+                action= actions.moveToElement(ctry).release(ctry).build();
+                action.perform();
+
+                if (city.getCssValue("background-color").equals("rgba(0, 128, 0, 1)")){
+                    break;}
             }
 
         BekleKapat();
