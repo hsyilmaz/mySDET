@@ -28,7 +28,7 @@ public class _02_ExplicitWait extends BaseStaticDriver {
 /*
     İnterview Sorusu :  Implicit ve Explicit
 
-    Implicitli  : Bütün elemanlar için geçerli,Bir kere tanımlanır.
+    Implicitly  : Bütün elemanlar için geçerli,Bir kere tanımlanır.
     Explicit    : Tek bir eleman özel Kriter olarak tanımlanır sadece ilgili elemanda geçerli olur
 
     Her ikisi tanımlı ise : önce Implicit kullanılır, ve üzerine Explicit in süresi eklenerek
