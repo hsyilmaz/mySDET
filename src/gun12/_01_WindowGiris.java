@@ -1,4 +1,4 @@
-package Gun12;
+package gun12;
 
 import Utils.BaseStaticDriver;
 import org.openqa.selenium.By;
