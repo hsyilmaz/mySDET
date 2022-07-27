@@ -17,7 +17,7 @@ public class _03_SelectClassGiris extends BaseStaticDriver {
     public static void main(String[] args) {
 
     driver.get("https://www.amazon.com/");
-    WebElement menu= driver.findElement(By.id("searchDropdownBox"));
+    WebElement menu= driver.findElement(By.cssSelector("select[searchDropdownDescription]"));
     Select ddmenu=new Select(menu);
 
     ddmenu.selectByVisibleText("Books");
