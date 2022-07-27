@@ -17,12 +17,10 @@ public class _04_OrnekProje extends BaseStaticDriver {
             for (int i = 0; i < 5; i++) {
                 WebElement firstnumber = driver.findElement(By.id("number1Field"));
                 int num1 = (int) (Math.random() * 10 + 1);
-                String strnum1 = "" + num1;   ///String.valueOf(num1);
-                firstnumber.sendKeys(strnum1);
+                firstnumber.sendKeys(String.valueOf(num1)); //firstnumber.sendKeys(""+num1);
                 WebElement secondnumber = driver.findElement(By.id("number2Field"));
                 int num2 = (int) (Math.random() * 10 + 1);
-                String strnum2 = num2 + ""; ///String.valueOf(num2);
-                secondnumber.sendKeys(strnum2);
+                secondnumber.sendKeys(Integer.toString(num2));  //secondnumber.sendKeys(num2+"")
 
                 WebElement selectmenu = driver.findElement(By.id("selectOperationDropdown"));
                 Select ddmenu = new Select(selectmenu);
@@ -50,8 +48,7 @@ public class _04_OrnekProje extends BaseStaticDriver {
         switch (j) {
             case 0:
                 int toplam = num1 + num2;
-                String strtoplam = String.valueOf(toplam);
-                Assert.assertTrue(strtoplam.contains(answer.getText()));
+                Assert.assertTrue((toplam+"").contains(answer.getText()));
                 break;
             case 1:
                 int cikar = num1 - num2;
