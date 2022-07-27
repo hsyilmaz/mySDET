@@ -15,10 +15,12 @@ public class _02_ExplicitWait extends BaseStaticDriver {
         btn.click();
 
 //  WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));// BaseStaticDriver'dan extend yaptik
-        WebElement webDriverText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='WebDriver']")));
+
+        WebElement webDriverText = wait.until(ExpectedConditions.visibilityOfElementLocated
+            (By.xpath("//p[text()='WebDriver']")));
         // Bu locaterdaki eleman , görünene kadar bekle.
 
-       //WebElement webDriverText=driver.findElement(By.xpath("//p[text()='WebDriver']"));
+//       WebElement webDriverText=driver.findElement(By.xpath("//p[text()='WebDriver']"));
         System.out.println("webDriverText.getText() = " + webDriverText.getText());
 
         BekleKapat();
