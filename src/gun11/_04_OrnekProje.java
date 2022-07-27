@@ -52,26 +52,21 @@ public class _04_OrnekProje extends BaseStaticDriver {
                 break;
             case 1:
                 int cikar = num1 - num2;
-                String strcikar = String.valueOf(cikar);
-                Assert.assertTrue(strcikar.contains(answer.getText()));
+                Assert.assertTrue((cikar+"").contains(answer.getText()));
                 break;
             case 2:
                 int carp = num1 * num2;
-                String strcarp = String.valueOf(carp);
-                Assert.assertTrue(strcarp.contains(answer.getText()));
+                Assert.assertTrue((""+carp).contains(answer.getText()));
                 break;
             case 3:
 
                 int bol = num1 / num2;
-                String strbol = String.valueOf(bol);
-                Assert.assertTrue(strbol.contains(answer.getText()));
+                Assert.assertTrue((""+bol).contains(answer.getText()));
                 break;
 
             case 4:
-                String strnum1 = String.valueOf(num1);
-                String strnum2 = String.valueOf(num2);
-                String concat = strnum1 + strnum2;
-                Assert.assertTrue(concat.contains(answer.getText()));
+                String koncat = num1+"" + num2+"";
+                Assert.assertTrue(koncat.contains(answer.getText()));
                 break;
         }
     }
