@@ -10,7 +10,7 @@ public class _01_IFrameGiris extends BaseStaticDriver {
 
         driver.switchTo().frame(0); //"frame1"
 
-        WebElement input=driver.findElement(By.cssSelector("b[id='topic']~input"));
+        WebElement input= driver.findElement(By.cssSelector("b#topic+input"));
         input.sendKeys("Türkiye");
 
 //        driver.switchTo().parentFrame(); // geldiği yere geri dön(1 basamak geri git)
