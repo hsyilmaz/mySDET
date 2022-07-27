@@ -3,18 +3,14 @@ package gun12;
 import Utils.BaseStaticDriver;
 import org.openqa.selenium.JavascriptExecutor;
 
-public class _05_ScrolltoBottomofthePage extends BaseStaticDriver {
+public class _05_ScrollToBottomOfThePage extends BaseStaticDriver {
     public static void main(String[] args) {
-        driver.get("https://triplebyte.com");
+        driver.get("https://triplebyte.com/");
 
-        JavascriptExecutor js= (JavascriptExecutor) driver;
+        JavascriptExecutor js= (JavascriptExecutor)driver;
 
-        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-
-
-
-
-
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //sayfanın sonuna kadar kaydırır.
 
 
         BekleKapat();
