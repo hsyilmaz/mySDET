@@ -44,20 +44,21 @@ public class BaseStaticDriver {
 
     public static void Bekle(int saniye)
     {
-
         try {
             Thread.sleep(saniye*1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public static void KalanOncekileriKapat() {
 
         try {
-            Runtime.getRuntime().exec("taskkill /F /IM chromedriver /T");
-        } catch (Exception ignored) {}
+            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+        } catch (Exception ignored) {
+            
+
+        }
 
     }
 

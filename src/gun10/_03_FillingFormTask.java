@@ -29,11 +29,11 @@ public class _03_FillingFormTask extends BaseStaticDriver {
         WebElement submit=driver.findElement(By.id("btn-submit"));
         submit.click();
 
-        wait.until(ExpectedConditions.textToBe(By.id("submit-control"),
-                "Form submitted Successfully!"));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div#submit-control"),
+                "Form submited Successfully!"));
 
-        WebElement mesaj=driver.findElement(By.id("submit-control"));
-        Assert.assertEquals("Form submitted Successfully!", mesaj.getText());
+        WebElement mesaj=driver.findElement(By.cssSelector("div#submit-control"));
+        Assert.assertEquals("Form submited Successfully!", mesaj.getText());
 
         BekleKapat();
     }
