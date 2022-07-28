@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-public class _04_OrnekProje extends BaseStaticDriver {
+public class _04_Tem26Prj extends BaseStaticDriver {
     public static void main(String[] args) {
         driver.get("https://testsheepnz.github.io/BasicCalculator.html");
 
@@ -35,6 +35,8 @@ public class _04_OrnekProje extends BaseStaticDriver {
                 WebElement answer = driver.findElement(By.id("numberAnswerField"));
 
                 switchmethod(j, num1, num2, answer);
+
+                Bekle(2);
 
                 firstnumber.clear();
                 secondnumber.clear();

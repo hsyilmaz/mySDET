@@ -12,17 +12,14 @@ public class Tem26Sali extends BaseStaticDriver {
         driver.get("https://testsheepnz.github.io/BasicCalculator.html");
 
 
-        for (int j = 0; j < 5; j++) {
-
-            for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 WebElement firstnumber = driver.findElement(By.id("number1Field"));
-                int num1 = (int) (Math.random() * 10 + 1);
-                String strnum1 = ""+num1;   ///String.valueOf(num1);
-                firstnumber.sendKeys(strnum1);
+                int num1 = (int) (Math.random() * 20 + 1);
+                firstnumber.sendKeys(String.valueOf(num1)); //firstnumber.sendKeys(""+num1);
                 WebElement secondnumber = driver.findElement(By.id("number2Field"));
-                int num2 = (int) (Math.random() * 10 + 1);
-                String strnum2 = num2+""; ///String.valueOf(num2);
-                secondnumber.sendKeys(strnum2);
+                int num2 = (int) (Math.random() * 20 + 1);
+                secondnumber.sendKeys(Integer.toString(num2));  //secondnumber.sendKeys(num2+"")
 
                 WebElement selectmenu = driver.findElement(By.id("selectOperationDropdown"));
                 Select ddmenu = new Select(selectmenu);
@@ -31,54 +28,46 @@ public class Tem26Sali extends BaseStaticDriver {
                 WebElement btn = driver.findElement(By.id("calculateButton"));
                 btn.click();
 //                try {
-                    wait.until(ExpectedConditions.textToBe(By.xpath("//*[text()='Answer']"),"Answer"));
-                  //wait.until(ExpectedConditions.elementToBeClickable(By.id("clearButton")));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("numberAnswerField")));
 //                } catch (Exception e) {
 //                }
                 WebElement answer = driver.findElement(By.id("numberAnswerField"));
 
-                switchmethod(j, num1, num2, answer);
+                Bekle(3);
 
-                firstnumber.clear();
-                secondnumber.clear();
+                switch (j) {
+                    case 0:
+                        int toplam = num1 + num2;
+                        Assert.assertTrue((toplam + "").contains(answer.getText()));
+                        firstnumber.clear();secondnumber.clear();
+                        break;
+                    case 1:
+                        int cikar = num1 - num2;
+                        Assert.assertTrue((cikar + "").contains(answer.getText()));
+                        firstnumber.clear();secondnumber.clear();
+                        break;
+                    case 2:
+                        int carp = num1 * num2;
+                        Assert.assertTrue(("" + carp).contains(answer.getText()));
+                        firstnumber.clear();secondnumber.clear();
+                        break;
+                    case 3:
+
+                        int bol = num1 / num2;
+                        Assert.assertTrue(("" + bol).contains(answer.getText()));
+                        firstnumber.clear();secondnumber.clear();
+                        break;
+
+                    case 4:
+                        String koncat = num1 + "" + num2 + "";
+                        Assert.assertTrue(koncat.contains(answer.getText()));
+                        firstnumber.clear();secondnumber.clear();
+                        break;
+                }
             }
         }
-
         BekleKapat();
     }
 
-    static void switchmethod(int j, int num1, int num2, WebElement answer) {
-        switch (j) {
-            case 0:
-                int toplam = num1 + num2;
-                String strtoplam = String.valueOf(toplam);
-                Assert.assertTrue(strtoplam.contains(answer.getText()));
-                break;
-            case 1:
-                int cikar = num1 - num2;
-                String strcikar = String.valueOf(cikar);
-                Assert.assertTrue(strcikar.contains(answer.getText()));
-                break;
-            case 2:
-                int carp = num1 * num2;
-                String strcarp = String.valueOf(carp);
-                Assert.assertTrue(strcarp.contains(answer.getText()));
-                break;
-            case 3:
-
-                int bol = num1 / num2;
-                String strbol = String.valueOf(bol);
-                Assert.assertTrue(strbol.contains(answer.getText()));
-                break;
-
-            case 4:
-                String strnum1=String.valueOf(num1);
-                String strnum2=String.valueOf(num2);
-                String concat =strnum1+strnum2;
-                Assert.assertTrue(concat.contains(answer.getText()));
-                break;
-        }
-    }
-
-
 }
+
