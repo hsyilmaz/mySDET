@@ -25,13 +25,13 @@ public class _03_WindowsClosing extends BaseStaticDriver {
                 link.click();
         }
 
-        Set<String> windowsIdler=driver.getWindowHandles();  // açık olan tüm sayfaların win id leri
+        Set<String> windowsIds=driver.getWindowHandles();  // açık olan tüm sayfaların win id leri
 
-        for(String id: windowsIdler) {
-            if (id.equals(anaSayfaWinddowId))
-                continue; // ana sayfa değilse
+        for(String id: windowsIds) {
+            if (id.equals(driver.getWindowHandle()))
+                continue; // ana sayfa ise onu atla ve devam et.
 
-            driver.switchTo().window(id); // diğer sayfaya (windowa) geçiş yaptık
+            driver.switchTo().window(id); // diğer sayfaya (window'a) geçiş yaptık.
             System.out.println(id + " - Title = " + driver.getTitle());
             driver.close();
         }

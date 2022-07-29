@@ -10,7 +10,8 @@ import java.util.Set;
 public class _02_WindowsSwitch extends BaseStaticDriver {
     public static void main(String[] args) {
         driver.get("https://www.selenium.dev/");
-        String anaSayfaWinddowId= driver.getWindowHandle(); // bulunduğun sayfanın win id si
+
+        String homepage=driver.getWindowHandle(); // bulunduğun sayfanın win id si
 
         List<WebElement> linkler=driver.findElements(By.cssSelector("a[target='_blank']"));
         for(WebElement link: linkler)
@@ -19,10 +20,9 @@ public class _02_WindowsSwitch extends BaseStaticDriver {
                 link.click();
         }
 
-        Set<String> windowsIdler=driver.getWindowHandles();  // açık olan tüm sayfaların win id leri
-
-        for(String id: windowsIdler) {
-            if (id.equals(anaSayfaWinddowId))
+        Set<String> windowsIds=driver.getWindowHandles();  // açık olan tüm sayfaların win id leri
+        for(String id: windowsIds) {
+            if (id.equals(homepage))
                 continue; // ana sayfa değilse
 
             driver.switchTo().window(id); // diğer sayfaya (windowa) geçiş yaptık

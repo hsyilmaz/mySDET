@@ -18,9 +18,9 @@ public class _01_WindowGiris extends BaseStaticDriver {
               link.click();
         }
 
-       Set<String> windowIdler=driver.getWindowHandles();
-       for(String id: windowIdler)
-           System.out.println("id = " + id);
+        Set<String> windowIds=driver.getWindowHandles();
+        for(String id: windowIds)
+            System.out.println("id = " + id);
 
        Bekle(6);
        BekleKapat();
