@@ -5,12 +5,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.time.Duration;
 
 /*
      İnterview Soruları :
@@ -18,19 +16,23 @@ import java.time.Duration;
      2- Dosya yükleme işlemini ne ile yaparsınız ? Robot class la
  */
 
-
 public class _01_RobotGiris extends BaseStaticDriver {
     public static void main(String[] args) throws AWTException {
         driver.get("http://demo.guru99.com/test/upload/");
 
+
         //TODO: frame gözükene kadar bekle eklenecek
         //toDO: frame in varlığı kontrol edilip var ise veya yok ise her iki duruma göre çözüm yapılacak
-        Bekle(3);
-        driver.switchTo().frame(8);  //"gdpr-consent-notice"
-        WebElement acceptAll = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Accept All']")));
-        //WebElement acceptAll = driver.findElement(By.xpath("//span[text()='Accept All']"));
-        acceptAll.click();
-        driver.switchTo().defaultContent();
+
+        Bekle(2);
+//        if (driver.findElement(By.cssSelector("[id^='frame']")).isDisplayed())
+//        {
+//        driver.switchTo().frame(8);  //"gdpr-consent-notice"
+//        WebElement acceptAll = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Accept All']")));
+//        //WebElement acceptAll = driver.findElement(By.xpath("//span[text()='Accept All']"));
+//        acceptAll.click();
+//        driver.switchTo().defaultContent();
+//        }
 
         Robot rbt=new Robot();
 
@@ -74,6 +76,6 @@ public class _01_RobotGiris extends BaseStaticDriver {
 
 
 
-        // BekleKapat();
+         BekleKapat();
     }
 }

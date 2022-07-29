@@ -25,7 +25,7 @@ public class _03_WindowsClosing extends BaseStaticDriver {
                 link.click();
         }
 
-        Set<String> windowsIds=driver.getWindowHandles();  // açık olan tüm sayfaların win id leri
+        Set<String>windowsIds=driver.getWindowHandles(); // açık olan tüm sayfaların win id leri
 
         for(String id: windowsIds) {
             if (id.equals(driver.getWindowHandle()))
