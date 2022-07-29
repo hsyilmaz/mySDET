@@ -15,6 +15,7 @@ public class _03_WindowSize extends BaseStaticDriver {
         Dimension dim=new Dimension(516,600);
         driver.manage().window().setSize(dim);
 
+
         BekleKapat();
     }
 }

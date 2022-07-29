@@ -25,16 +25,22 @@ public class _01_RobotGiris extends BaseStaticDriver {
         //toDO: frame in varlığı kontrol edilip var ise veya yok ise her iki duruma göre çözüm yapılacak
 
         Bekle(2);
-//        if (driver.findElement(By.cssSelector("[id^='frame']")).isDisplayed())
-//        {
-//        driver.switchTo().frame(8);  //"gdpr-consent-notice"
-//        WebElement acceptAll = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Accept All']")));
-//        //WebElement acceptAll = driver.findElement(By.xpath("//span[text()='Accept All']"));
-//        acceptAll.click();
-//        driver.switchTo().defaultContent();
-//        }
+        if (driver.findElement(By.cssSelector("iframe[id*='frame']")).isDisplayed())
+        {
+        driver.switchTo().frame(8);  //"gdpr-consent-notice"
+        WebElement acceptAll = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Accept All']")));
+        //WebElement acceptAll = driver.findElement(By.xpath("//span[text()='Accept All']"));
+        acceptAll.click();
+        driver.switchTo().defaultContent();
+        }
 
         Robot rbt=new Robot();
+
+        rbt.keyPress(KeyEvent.VK_META);
+        rbt.keyPress(KeyEvent.VK_TAB);
+        rbt.keyRelease(KeyEvent.VK_TAB);
+        Bekle(1);
+        rbt.keyRelease(KeyEvent.VK_META);
 
         for(int i=0;i<13;i++) {
             rbt.keyPress(KeyEvent.VK_TAB); // tuşa basıldı  down
@@ -44,9 +50,14 @@ public class _01_RobotGiris extends BaseStaticDriver {
 
         rbt.keyPress(KeyEvent.VK_ENTER); // tuşa basıldı  down
         rbt.keyRelease(KeyEvent.VK_ENTER); // tuş bırakıldı up
+        rbt.keyPress(KeyEvent.VK_DOWN);
+        rbt.keyPress(KeyEvent.VK_ENTER);
+        rbt.keyRelease(KeyEvent.VK_DOWN);
+        rbt.keyRelease(KeyEvent.VK_ENTER);
+
 
         // Stringi hafızaya-clipboard a kopyalama kodu   Ctrl+C  "C:\Users\TechnoStudy\Desktop\ornek.txt"
-        StringSelection stringSelection = new StringSelection("C:\\Users\\TechnoStudy\\Desktop\\ornek.txt");
+        StringSelection stringSelection = new StringSelection("/Users/computer/Desktop/DOV.docx");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection , null);
         // Verilen stringi clipboard a set ediyor.
         Bekle(1);
