@@ -43,8 +43,11 @@ public class fridayproject3senario4 extends BaseStaticDriver {
         cardno.sendKeys("1111 1111 1111 1111");
         driver.switchTo().parentFrame();
 
-        WebElement validate = driver.findElement(By.xpath("//*[text()='Kart numaranız geçersiz.']"));
-        Assert.assertTrue(validate.isDisplayed());
+    //        WebElement validate = driver.findElement(By.xpath("//*[text()='Kart numaranız geçersiz.']"));
+    //        Assert.assertTrue(validate.isDisplayed());
+
+        WebElement message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Kart numaranız geçersiz.']")));
+        Assert.assertTrue(message.isDisplayed());
 
         driver.switchTo().defaultContent();
 

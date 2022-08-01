@@ -26,11 +26,11 @@ public class fridayproject3senario1_v2 extends BaseStaticDriver {
         WebElement contShop = driver.findElement(By.xpath("//button[text()='Continue Shopping']"));
         contShop.click();
 
-        driver.switchTo().parentFrame();
+        driver.switchTo().defaultContent();
 
-        WebElement validate2= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='cart_item_nos']")));
+        WebElement validate2= wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[id='cart_item_nos']")));
 
-       Assert.assertEquals("0",validate2.getAttribute("value"));
+        Assert.assertTrue(validate2.getText().contains("0"));
 
 
         BekleKapat();
