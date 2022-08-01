@@ -51,7 +51,7 @@ public class fridayproject3senario5 extends BaseStaticDriver {
 
         Assert.assertTrue(verificate.getText().contains("your order is confirmed. Thank you"));
 
-        driver.switchTo().defaultContent();
+//        driver.switchTo().defaultContent();
 
         BekleKapat();
 

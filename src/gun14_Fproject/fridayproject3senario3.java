@@ -13,8 +13,6 @@ public class fridayproject3senario3 extends BaseStaticDriver {
         WebElement addtoCart=driver.findElement(By.cssSelector("[onclick=\"return EJProductClick('1595015')\"]"));
         addtoCart.click();
 
-
-
         driver.switchTo().frame(driver.findElement(By.cssSelector("[class='EJIframeV3 EJOverlayV3']")));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='Product-Quantity']>input")));
@@ -26,7 +24,7 @@ public class fridayproject3senario3 extends BaseStaticDriver {
         Pay.click();
 
         WebElement validate=driver.findElement(By.cssSelector("[id='SnackBar']>ion-icon+span"));
-        Assert.assertTrue(validate.getText().contains("Invalid Email"));
+        Assert.assertTrue(validate.getText().contains("Invalid Billing Name"));
 
         driver.switchTo().defaultContent();
 

@@ -28,10 +28,10 @@ public class fridayproject3senario2 extends BaseStaticDriver {
         WebElement apply2=driver.findElement(By.xpath("//*[text()='Apply']"));
         apply2.click();
 
-        WebElement valide=driver.findElement(By.xpath("//*[text()='Invalid promo code']"));
+        WebElement validate=driver.findElement(By.xpath("//*[text()='Invalid promo code']"));
 
-        Assert.assertTrue(valide.isDisplayed());
-        driver.switchTo().defaultContent();
+        Assert.assertTrue(validate.isDisplayed());
+//        driver.switchTo().defaultContent();
 
 
         BekleKapat();
