@@ -52,8 +52,8 @@ public class _01_RobotGiris extends BaseStaticDriver {
         rbt.keyRelease(KeyEvent.VK_ENTER); // tuş bırakıldı up
 
         // Stringi hafızaya-clipboard a kopyalama kodu   Ctrl+C  "C:\Users\TechnoStudy\Desktop\ornek.txt"
-        StringSelection stringSelection = new StringSelection("/Users/computer/Desktop/DOV.docx");
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection , null);
+//        StringSelection stringSelection = new StringSelection("/Users/computer/Desktop/DOV.docx");
+//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection , null);
         // Verilen stringi clipboard a set ediyor.
 
 //        Bekle(1);
@@ -81,6 +81,8 @@ public class _01_RobotGiris extends BaseStaticDriver {
         rbt.keyRelease(KeyEvent.VK_DOWN);
         rbt.keyPress(KeyEvent.VK_ENTER);
         rbt.keyRelease(KeyEvent.VK_ENTER);
+
+        Bekle(6);
 
         WebElement submitbutton = driver.findElement(By.id("submitbutton"));  // submıt butonuna bastık
         submitbutton.click();

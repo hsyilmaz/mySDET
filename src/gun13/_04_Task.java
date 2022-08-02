@@ -10,6 +10,12 @@ public class _04_Task extends BaseStaticDriver {
 
         Robot r = new Robot();
 
+        r.keyPress(java.awt.event.KeyEvent.VK_META);
+        r.keyPress(java.awt.event.KeyEvent.VK_TAB);
+        r.keyRelease(java.awt.event.KeyEvent.VK_TAB);
+        Bekle(1);
+        r.keyRelease(java.awt.event.KeyEvent.VK_META);
+
         for (int i = 0; i < 3; i++) {
             r.keyPress(KeyEvent.VK_COMMAND); // tuşa basıldı  down
             r.keyPress(KeyEvent.VK_TAB); // tuş bırakıldı up
