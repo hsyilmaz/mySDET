@@ -1,4 +1,4 @@
-package gun21_Ag5_Fproject;
+package gun19_Ag5_Fproject;
 
 import Utils.BaseStaticDriver;
 import org.junit.Assert;
@@ -91,7 +91,7 @@ public class senario3 extends BaseStaticDriver {
         WebElement confirm = driver.findElement(By.cssSelector("[value='Confirm']"));
         confirm.click();
 
-        WebElement validate = driver.findElement(By.xpath("//*[text()='Your order has been successfully processed!']"));
+        WebElement validate = driver.findElement(By.xpath("//*[contains(text(),'processed!')]"));
 
         Assert.assertEquals("Your order has been successfully processed!",validate.getText());
 
