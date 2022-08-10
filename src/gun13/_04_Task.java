@@ -1,37 +1,58 @@
 package gun13;
-import Utils.BaseStaticDriver;
-import com.sun.glass.events.KeyEvent;
 
+import Utils.BaseStaticDriver;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.Set;
+
 
 public class _04_Task extends BaseStaticDriver {
     public static void main(String[] args) throws AWTException {
         driver.get("https://www.google.com/");
 
-        Robot r = new Robot();
+        Robot rbt = new Robot();
 
-        r.keyPress(java.awt.event.KeyEvent.VK_META);
-        r.keyPress(java.awt.event.KeyEvent.VK_TAB);
-        r.keyRelease(java.awt.event.KeyEvent.VK_TAB);
+        rbt.keyPress(KeyEvent.VK_META);
+        rbt.keyPress(KeyEvent.VK_TAB);
+        rbt.keyRelease(KeyEvent.VK_TAB);
         Bekle(1);
-        r.keyRelease(java.awt.event.KeyEvent.VK_META);
+        rbt.keyRelease(KeyEvent.VK_META);
 
-        for (int i = 0; i < 3; i++) {
-            r.keyPress(KeyEvent.VK_COMMAND); // tuşa basıldı  down
-            r.keyPress(KeyEvent.VK_TAB); // tuş bırakıldı up
-                r.keyRelease(KeyEvent.VK_COMMAND);
-                r.keyRelease(KeyEvent.VK_TAB);
-    }
-
-        driver.get("http://www.facebook.com");
-        driver.switchTo().window(driver.getWindowHandle());
-        driver.get("http://www.youtube.com");
-        driver.switchTo().window(driver.getWindowHandle());
-        driver.get("http://www.amazon.com");
-
-            BekleKapat();
-
+        for (int i = 0; i < 2; i++) {
+            rbt.keyPress(KeyEvent.VK_META);
+            rbt.keyPress(KeyEvent.VK_T);
+            rbt.keyRelease(KeyEvent.VK_T);
+            rbt.keyRelease(KeyEvent.VK_META);
         }
+
+        switchingWindow("https://www.youtube.com");
+        switchingWindow("https://www.amazon.com");
+
+        BekleKapat();}
+
+    public static void switchingWindow(String url){
+        Set<String> windowsIds = driver.getWindowHandles();  // IDs of all open pages/windows.
+        for (String id : windowsIds) {
+            if(id.equals(driver.getWindowHandle()))
+                continue;
+
+        driver.switchTo().window(id); //
+        driver.get(url);
+        System.out.println(id + " - Title = " + driver.getTitle());
     }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
