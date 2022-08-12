@@ -1,4 +1,4 @@
-package gun19_Ag5_Fproject;
+package gun06;
 
 import Utils.BaseStaticDriver;
 import org.junit.Assert;
@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class deneme extends BaseStaticDriver {
+public class trial_for_select_class extends BaseStaticDriver {
     @Test
     public void selectTest() throws InterruptedException {
 

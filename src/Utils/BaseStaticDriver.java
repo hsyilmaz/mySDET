@@ -54,7 +54,7 @@ public class BaseStaticDriver {
     public static void KalanOncekileriKapat() {
 
         try {
-            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+            Runtime.getRuntime().exec("taskkill /F /IM chromedriver /T");
         } catch (Exception ignored) {
             
 

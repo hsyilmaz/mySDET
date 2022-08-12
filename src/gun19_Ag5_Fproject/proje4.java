@@ -10,8 +10,8 @@ public class proje4 extends BaseStaticDriver {
         driver.get("http://demowebshop.tricentis.com/");
 
 //        demoWebShopRegister();
-//        scenario_1();
-//        scenario_2();
+        scenario_1();
+        scenario_2();
         scenario_3();
     }
     public static void demoWebShopRegister() {
