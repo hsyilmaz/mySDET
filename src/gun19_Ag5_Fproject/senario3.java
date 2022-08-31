@@ -63,7 +63,7 @@ public class senario3 extends BaseStaticDriver {
         WebElement State = driver.findElement(By.id("BillingNewAddress_StateProvinceId"));
         Select state = new Select(State);
 
-//wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector("[id='BillingNewAddress_StateProvinceId']>option"), state.getOptions().size()));
+//wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector("[id='BillingNewAddress_StateProvinceId']"), state.getOptions().size()));
 
         state.selectByIndex(2);
 
