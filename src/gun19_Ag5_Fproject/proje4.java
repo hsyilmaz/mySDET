@@ -9,7 +9,7 @@ public class proje4 extends BaseStaticDriver {
     public static void main(String[] args) {
         driver.get("http://demowebshop.tricentis.com/");
 
-//        demoWebShopRegister();
+      // demoWebShopRegister();
         scenario_1();
         scenario_2();
         scenario_3();
